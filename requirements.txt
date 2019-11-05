@@ -1,0 +1,10 @@
+django
+djangorestframework
+django-cors-headers
+markdown
+pytz
+gunicorn==19.7.1
+django-filter
+flup
+django.conf.urls.defaults
+mysql-connector-python
