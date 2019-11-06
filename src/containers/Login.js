@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import * as actions from '../store/actions/auth';
 import axios from 'axios';
+import { Urls } from '../apiurls';
 
 const FormItem = Form.Item;
 const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
@@ -16,7 +17,7 @@ class NormalLoginForm extends React.Component {
       if (!err) {
         this.props.onAuth(values.userName, values.password);
         console.log(localStorage.getItem('token') != null)
-        axios.post('http://127.0.0.1:8000/rest-auth/login/', {
+        axios.post(`${Urls.Login}`, {
             username: values.userName,
             password: values.password
         })

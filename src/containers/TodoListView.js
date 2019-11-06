@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Todos from "../components/Todo";
 import CustomForm from "../components/Form";
+import { Urls } from '../apiurls';
 
 
 class TodoList extends React.Component {
@@ -20,14 +21,14 @@ class TodoList extends React.Component {
       //Authorization: 'Token 439b7f2095fcaa75bbbd4de214638f7bf3987cbf'
     };
     console.log(localStorage.getItem('token') != null)
-    axios.get("http://127.0.0.1:8000/todos/", {
+    axios.get(`${Urls.Todos.GetAll}`, {
       headers : headers 
     }).then(res => {
       this.setState({
         todos: res.data
       });
     });
-    axios.get(`http://127.0.0.1:8000/buckets/` ,{headers:headers}).then(res => {
+    axios.get(`${Urls.Buckets}` ,{headers:headers}).then(res => {
       this.setState({
         bucketList: res.data
       });

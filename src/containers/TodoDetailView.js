@@ -3,6 +3,7 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { Button} from "antd";
 import CustomForm from "../components/Form";
+import { Urls } from '../apiurls';
 
 
 class TodoDetail extends React.Component {
@@ -18,12 +19,12 @@ class TodoDetail extends React.Component {
       "Content-Type": "application/json",
       Authorization: `Token ${localStorage.getItem("token")}`
     };
-    axios.get(`http://127.0.0.1:8000/details/?id=${todoid}` ,{headers:headers}).then(res => {
+    axios.get(`${Urls.Todos.GetDetails}/?id=${todoid}` ,{headers:headers}).then(res => {
       this.setState({
         todo: res.data[0]
       });
     });
-    axios.get(`http://127.0.0.1:8000/buckets/` ,{headers:headers}).then(res => {
+    axios.get(`${Urls.Buckets}` ,{headers:headers}).then(res => {
       this.setState({
         bucketList: res.data
       });
@@ -39,7 +40,7 @@ class TodoDetail extends React.Component {
       Authorization: `Token ${localStorage.getItem("token")}`
      // Authorization: 'Token 439b7f2095fcaa75bbbd4de214638f7bf3987cbf'
     };
-    axios.delete(`http://127.0.0.1:8000/delete/?id=${todoid}` ,{headers:headers})
+    axios.delete(`${Urls.Todos.Delete}/?id=${todoid}` ,{headers:headers})
     .then(res => {
       if (res.status === 200 ||res.status === 204) {
         this.props.history.push(`/todos`);

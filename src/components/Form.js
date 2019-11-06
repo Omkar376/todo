@@ -3,6 +3,7 @@ import { Form, Input, Button } from "antd";
 import { connect } from "react-redux";
 import axios from "axios";
 import Creatable from 'react-select/creatable';
+import { Urls } from '../apiurls';
 
 const FormItem = Form.Item;
 
@@ -76,7 +77,7 @@ class CustomForm extends React.Component {
     };
     
     if (requestType === "post") {
-      await axios.post("http://127.0.0.1:8000/todos/", postObj, {headers : headers})
+      await axios.post(`${Urls.Todos.Post}`, postObj, {headers : headers})
         .then(res => {
           if (res.status === 201) {
            // this.props.history.push(`/todos`);
@@ -84,7 +85,7 @@ class CustomForm extends React.Component {
           }
         })
     } else if (requestType === "put") {
-      await axios.put(`http://127.0.0.1:8000/todos/`, postObj, {headers : headers})
+      await axios.put(`${Urls.Todos.Put}`, postObj, {headers : headers})
         .then(res => {
           if (res.status === 200) {
             this.props.history.push(`/todos`);
