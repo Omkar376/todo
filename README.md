@@ -20,4 +20,9 @@ To start this app follow below steps:
 5. npm start
      #To start React App
      
+![alt text](https://github.com/Omkar376/todo/blob/master/screenshot/signup.PNG)     
+![alt text](https://github.com/Omkar376/todo/blob/master/screenshot/login.PNG)
 ![alt text](https://github.com/Omkar376/todo/blob/master/screenshot/create%20todo%20item.PNG)
+![alt text](https://github.com/Omkar376/todo/blob/master/screenshot/todo%20list.PNG)
+![alt text](https://github.com/Omkar376/todo/blob/master/screenshot/todo%20details.PNG)
+
