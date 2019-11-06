@@ -20,6 +20,10 @@ To start this app follow below steps:
 5. npm start
      #To start React App
 
+Check the deployed version on heroku
+https://apptodo0376.herokuapp.com
+
+
 Sign-Up
 ![alt text](https://github.com/Omkar376/todo/blob/master/screenshot/signup.PNG)
 
