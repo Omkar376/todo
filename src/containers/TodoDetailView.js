@@ -19,7 +19,7 @@ class TodoDetail extends React.Component {
       "Content-Type": "application/json",
       Authorization: `Token ${localStorage.getItem("token")}`
     };
-    axios.get(`${Urls.Todos.GetDetails}/?id=${todoid}` ,{headers:headers}).then(res => {
+    axios.get(`${Urls.Todos.GetDetails}?id=${todoid}` ,{headers:headers}).then(res => {
       this.setState({
         todo: res.data[0]
       });
@@ -40,7 +40,7 @@ class TodoDetail extends React.Component {
       Authorization: `Token ${localStorage.getItem("token")}`
      // Authorization: 'Token 439b7f2095fcaa75bbbd4de214638f7bf3987cbf'
     };
-    axios.delete(`${Urls.Todos.Delete}/?id=${todoid}` ,{headers:headers})
+    axios.delete(`${Urls.Todos.Delete}?id=${todoid}` ,{headers:headers})
     .then(res => {
       if (res.status === 200 ||res.status === 204) {
         this.props.history.push(`/todos`);
